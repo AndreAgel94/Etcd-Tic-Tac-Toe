@@ -1,0 +1,5 @@
+etcd --name infra0 --initial-advertise-peer-urls http://localhost:12345 --listen-peer-urls http://localhost:12345 --listen-client-urls http://localhost:12346 --advertise-client-urls http://localhost:12346 --initial-cluster-token etcd-cluster-1 --initial-cluster infra0=http://localhost:12345,infra1=http://localhost:12355,infra2=http://localhost:12365 --initial-cluster-state new
+
+etcd --name infra1 --initial-advertise-peer-urls http://localhost:12355 --listen-peer-urls http://localhost:12355 --listen-client-urls http://localhost:12356 --advertise-client-urls http://localhost:12356 --initial-cluster-token etcd-cluster-1 --initial-cluster infra0=http://localhost:12345,infra1=http://localhost:12355,infra2=http://localhost:12365 --initial-cluster-state new
+
+etcd --name infra2 --initial-advertise-peer-urls http://localhost:12365 --listen-peer-urls http://localhost:12365 --listen-client-urls http://localhost:12366 --advertise-client-urls http://localhost:12366 --initial-cluster-token etcd-cluster-1 --initial-cluster infra0=http://localhost:12345,infra1=http://localhost:12355,infra2=http://localhost:12365 --initial-cluster-state new
